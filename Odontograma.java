@@ -53,11 +53,13 @@ public class Odontograma extends Dente {
 
         ImagePlus odonto = new ImagePlus("Odontograma.png"); //carrega imagem
         ImageProcessor odontoProcessor = odonto.getProcessor(); //cria o processador da imagem
-        BufferedImage odontoBuffer = odontoProcessor.getBufferedImage(); //coloca a imagem do processador na memoria para alteracao local
+        BufferedImage odontoBuffer = odontoProcessor.getBufferedImage(); 
+        //coloca a imagem do processador na memoria para alteracao local
         ColorProcessor odontoColor = new ColorProcessor (odontoBuffer);
             
         ArrayList<Dente> denteArray = new ArrayList<Dente>(); //uma array bruta com todos os objetos e sua construcao
-        for (int contador = 11; contador < 86; contador++) { if (contadorCheck(contador)) { denteArray.add(new Dente(contador)); } }
+        for (int contador = 11; contador < 86; contador++) { 
+            if (contadorCheck(contador)) { denteArray.add(new Dente(contador)); } }
         
         int status = 0;
         int face = 0;
@@ -136,7 +138,5 @@ public class Odontograma extends Dente {
         
         FileSaver odontoSaver = new FileSaver(odontoPlus); //cria o salvador da imagem
         odontoSaver.saveAsPng("OdontoPaint.png"); //salva a imagem no endereco descrito
-
     }
-
 }
