@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package odontograma;
-
 /**
- *
  * @author lorensov
  */
 public class Dente {
@@ -15,15 +8,13 @@ public class Dente {
     private int status; //0_white 16777215//1_red 16711680 //2_yellow 16776960 //3_green 65280 //4_blue 255
     private int face; //0_centro do dente //1_lado de cima //2_direita //3_baixo //4_esquerda
     
-    
     public void setNumeroDente(int numeroDente){this.numeroDente = numeroDente;}
 
     public int getNumeroDente(){return numeroDente;}
     
-    public void setExiste(boolean existe) {this.existe = existe;} //falta implementar a capacidade de pintar se o dente existe ou nao
+    public void setExiste(boolean existe) {this.existe = existe;}
     
-    public boolean getExiste() {return existe;} //para isso precisa-se mapear o X,Y inicial do quadrado do dente e o X,Y final do quadrado do dente e pintar o quadrado todo de branco...
-    // nao eh dificil, soh eh chato pra caralho!
+    public boolean getExiste() {return existe;}
     
     public void setFace(int region){this.face = region;}
     
@@ -39,10 +30,10 @@ public class Dente {
         return 16777215; //branco
     }
 
-    //vermelho procedimentos a serem realizados RED
-    //amarelo procedimento em andamento
-    //verde procedimento concluido GREEN
-    //azul tratamento bem feito BLUE
+    //vermelho procedimentos a serem realizados == RED
+    //amarelo procedimento em andamento == YELLOW
+    //verde procedimento concluido == GREEN
+    //azul tratamento bem feito por outro dentista == BLUE
     public Dente() {}
 
     public Dente(int coordenates) {
@@ -116,7 +107,6 @@ public class Dente {
         System.out.println("O valor de " + dentinho + "  para referencia esta como: " + dentinho.getNumeroDente());
         System.out.println("A regiao: "+face+" esta com o status: "+status);
         System.out.println("O valor de " + dentinho + "  para exist esta como: " + dentinho.getExiste());
-
     }
 
     public int Xstart(Dente dentinho) { 
@@ -503,7 +493,7 @@ public class Dente {
         return 0;
     }
 
-    public int Ystart(Dente dentinho) { //talvez ele soh retorne as coordenadas x,y iniciais do dente!
+    public int Ystart(Dente dentinho) {
         switch (dentinho.numeroDente) {
             case 11:
                 switch (dentinho.face){
@@ -887,7 +877,7 @@ public class Dente {
         return 0;
     }
     
-    public int Xfinal(Dente dentinho) { //talvez ele soh retorne as coordenadas x,y iniciais do dente!
+    public int Xfinal(Dente dentinho) {
         switch (dentinho.numeroDente) {
             case 11:
                 switch (dentinho.face){
@@ -1271,7 +1261,7 @@ public class Dente {
         return 0;
     }
 
-    public int Yfinal(Dente dentinho) { //talvez ele soh retorne as coordenadas x,y iniciais do dente!
+    public int Yfinal(Dente dentinho) {
         switch (dentinho.numeroDente) {
             case 11:
                 switch (dentinho.face){
@@ -1702,7 +1692,7 @@ public class Dente {
     }
     
     
-    //falta implementar a recepcao de parametros e resposta dos metodos 
+    // alterativa para implementar melhor... falta implementar corretamente e com a integracao correta
     public void printCenter(Dente dentinho){
          /*if ( dentinho.getFace() == 0 ){
                 for (int x = dentinho.Xstart(dentinho); x <= dentinho.Xfinal(dentinho); x++){
